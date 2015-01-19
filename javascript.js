@@ -1,10 +1,23 @@
 $(document).ready(function(){
   $(".button").click(function(){
     $(this).slideUp("slow", function(){
+      //$(this).toggleClass("selected");
       $(".hidden").slideDown("slow", function(){
-        $(this).css("visibility", "visible");
+        //$(".hidden").siblings().css("visibility", "visible");
+        //$(this).css("visibility", "visible");
+        //$(this).next().css("visibility", "visible");
+        //$(this).next().toggleClass("visible");
+        $(this).toggleClass("visible");
+        // $(".visible").toggleClass("hidden", function(){
+        //   if($(".button").display==="none"){
+        //     $(".button").slideDown("slow");
+        //   }
+        // })
       })
     });
+    // $(".hidden").slideDown("slow", function(){
+    //   $(this).toggleClass("visible");
+    // })
   });
 });
 
@@ -28,6 +41,7 @@ var create = function(elem){
     image.className="unselected";
     var li = document.createElement("li");
     var button = document.createElement("Button");
+    button.className="poster"
     var p = document.createElement("p");
     var div = document.createElement("div");
     div.className="button";
@@ -54,7 +68,7 @@ var create = function(elem){
     actor.className="actor";
 
     //append list items with hidden elements
-    li.appendChild(hiddenDiv);
+    button.appendChild(hiddenDiv);
     hiddenDiv.appendChild(title);
     hiddenDiv.appendChild(year);
     hiddenDiv.appendChild(plot);
