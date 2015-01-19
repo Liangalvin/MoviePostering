@@ -1,0 +1,31 @@
+body {
+  margin: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  width: 300px;
+  height: 400px;
+  display: inline;
+  float: left;
+  padding: 10px;
+  border-style: solid;
+  border-color: black;
+}
+
+img {
+  padding: 15px;
+  width: 250px;
+  height: 300px;
+}
+
+p {
+  text-align: center;
+}
+
+.hidden {
+  visibility: hidden;
+}
