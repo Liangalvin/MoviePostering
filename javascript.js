@@ -1,3 +1,7 @@
+$(document).ready(function(){
+
+});
+
 //array of movies -> have movies listed with class of "unselected"
 var comedies = ["Step Brothers", "The Other Guys", "Zoolander", "Megamind", "Semi-pro", "Blades of Glory", "21 Jump street", "22 Jump Street", "American Pie", "American Wedding", "American Reunion", "The Hangover", "Just Go With It", "50 First Dates"];
 var romance = ["Thor", "Iron Man", "Iron Man 2", "The Incredible Hulk", "Spider-Man", "Spider-Man 2", "Spider-Man 3", "Transformers", "Transformers: Age of Extinction", "Transformers: Dark of the Moon", "Transformers: Revenge of the Fallen", "Batman Begins", "The Dark Knight", "The Dark Knight Rises", "Man of Steel", "Captain America: The first avenger"];
@@ -15,19 +19,20 @@ var list = document.getElementById("theList");
 var create = function(elem){
 //comedies.forEach(function(elem){
     var image = document.createElement("img");
+    image.className="unselected";
     var li = document.createElement("li");
-    var anchor = document.createElement("a");
+    var button = document.createElement("Button");
     var p = document.createElement("p");
     var div = document.createElement("div");
+    div.className="button";
     //console.log(i+" li created");
 
-    //each list item contains a image and a div(title of movie)
+    //each list item contains a image and title of movie
     list.appendChild(li);
-    li.appendChild(anchor);
-    anchor.appendChild(image);
-    li.appendChild(p);
-    li.appendChild(div);
-    div.className="hidden";
+    li.appendChild(button);
+    button.appendChild(div);
+    div.appendChild(image);
+    div.appendChild(p)
 
     //this is for the 1. input // 2. URI encodes with % // 3. API with link
     var input = elem;
@@ -46,11 +51,11 @@ var create = function(elem){
       var parsed = JSON.parse(d); // ***MUST PARSE THE DATA FIRST***
       image.src = parsed.Poster; //parsed is now the object (.Poster is key in object)
       //console.log("image source added");
-      console.log(parsed);
+      //console.log(parsed);
 
       p.innerHTML = parsed.Title;
       //div.innerHTML = parsed.Plot;
-      anchor.setAttribute("href", " "); //this makes posters clickable
+      //anchor.setAttribute("href", " "); //this makes posters clickable temporary
     })
    xhr.send(); // **I have no idea what this does**
  }
@@ -64,7 +69,7 @@ chuckNorris.forEach(create);
   var movieInfo = function(elem){
     var div = document.querySelector("div");
     var section = document.createElement("div");
-    section.id ="section";
+    section.className ="section";
     var poster = document.createElement("img");
     poster.className="poster";
     var title = document.createElement("h1");
@@ -89,7 +94,7 @@ chuckNorris.forEach(create);
   var url_safe = encodeURI(input);
   var url = "http://omdbapi.com/?t=" + url_safe;
 
-  //constructor object
+  //constructor
   var xhr = new XMLHttpRequest();
 
   //gets the data from url
