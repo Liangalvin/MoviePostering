@@ -35,3 +35,29 @@ p {
 .visible {
   visibility: visible;
 }
+
+#header {
+  padding-top: 10px;
+  width: 900px;
+  height: 120px;
+  margin: auto;
+  border-style: solid;
+  border-color: black;
+}
+
+#h1 {
+  padding-top: 10px;
+  margin: auto;
+  width: 400px;
+  height: 60px;
+  text-align: center;
+  border-bottom: solid;
+  border-color: black;
+}
+
+#h2 {
+  padding: 10px;
+  height: 40px;
+  margin: auto;
+  text-align: center;
+}
