@@ -1,23 +1,23 @@
 $(document).ready(function(){
   $(".button").click(function(){
-    $(this).slideUp("slow", function(){
-      //$(this).toggleClass("selected");
+    $(this).slideUp("slow")//, function(){
       $(".hidden").slideDown("slow", function(){
+        $(this).css("visibility", "visible");
+      })
+      //$(this).toggleClass("selected");
+      //$(".hidden").slideDown("slow", function(){
         //$(".hidden").siblings().css("visibility", "visible");
         //$(this).css("visibility", "visible");
         //$(this).next().css("visibility", "visible");
         //$(this).next().toggleClass("visible");
-        $(this).toggleClass("visible");
+        //$(this).toggleClass("visible");
         // $(".visible").toggleClass("hidden", function(){
         //   if($(".button").display==="none"){
         //     $(".button").slideDown("slow");
         //   }
         // })
-      })
-    });
-    // $(".hidden").slideDown("slow", function(){
-    //   $(this).toggleClass("visible");
-    // })
+      //});
+    //});
   });
 });
 
@@ -35,7 +35,7 @@ var list = document.getElementById("theList");
 //   for(var i=0; i < section.length; i++){
 
 //Alvin! YOU(I) created this function for callback, *FOR LOOP DID NOT WORK*
-var create = function(elem){
+var createTags = function(elem){
 //comedies.forEach(function(elem){
     var image = document.createElement("img");
     image.className="unselected";
@@ -108,7 +108,7 @@ var create = function(elem){
    xhr.send(); // **I have no idea what this does**
  }
 
-comedies.forEach(create);
-romance.forEach(create);
-action.forEach(create);
-chuckNorris.forEach(create);
+comedies.forEach(createTags);
+romance.forEach(createTags);
+action.forEach(createTags);
+chuckNorris.forEach(createTags);
