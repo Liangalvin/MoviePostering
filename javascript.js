@@ -1,5 +1,11 @@
 $(document).ready(function(){
-
+  $(".button").click(function(){
+    $(this).slideUp("slow", function(){
+      $(".hidden").slideDown("slow", function(){
+        $(this).css("visibility", "visible");
+      })
+    });
+  });
 });
 
 //array of movies -> have movies listed with class of "unselected"

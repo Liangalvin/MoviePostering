@@ -27,5 +27,11 @@ p {
 }
 
 .hidden {
+  display: none;
   visibility: hidden;
+  overflow: hidden;
+}
+
+.visible {
+  visibility: visible;
 }
