@@ -1,16 +1,8 @@
-//var button = document.getElementById("button");
-
-//select the sections, must append each section with createItem function
-//var comedyList = document.querySelector("#comedySection");
-//var romanceList = document.querySelector("#romanceSection");
-//var actionList = document.querySelector("#actionSection");
-//var chuckNorris = document.querySelector("#norrisSection");
-
 //array of movies -> have movies listed with class of "unselected"
-var comedies = ["Step Brothers", "The Other Guys", "Zoolander", "Megamind", "Semi-pro", "Blades of Glory"];
-var romance = ["Thor", "Iron Man", "Iron Man 2", "Iron Man 3", "The Incredible Hulk", "Spider-Man"];
-var action = ["The Expendables", "The Expendables 2", "The Expendables 3", "Rambo"];
-var chuckNorris = ["The Delta Force", "Sidekicks", "Missing In Action", "The Hitman", "Firewalker"];
+var comedies = ["Step Brothers", "The Other Guys", "Zoolander", "Megamind", "Semi-pro", "Blades of Glory", "21 Jump street", "22 Jump Street", "American Pie", "American Wedding", "American Reunion", "The Hangover", "Just Go With It", "50 First Dates"];
+var romance = ["Thor", "Iron Man", "Iron Man 2", "The Incredible Hulk", "Spider-Man", "Spider-Man 2", "Spider-Man 3", "Transformers", "Transformers: Age of Extinction", "Transformers: Dark of the Moon", "Transformers: Revenge of the Fallen", "Batman Begins", "The Dark Knight", "The Dark Knight Rises", "Man of Steel"];
+var action = ["The Expendables", "The Expendables 2", "The Expendables 3", "The Help", "Rambo", "Gangster Squad", "The Terminator", "Terminator 2: Judgement Day", "Terminator 3: Rise of the Machines", "Terminator Salvation", "Taken", "Taken 2", "The A-team", "ZombieLand"];
+var chuckNorris = ["The Delta Force", "Sidekicks", "Missing In Action", "The Hitman", "Firewalker", "DodgeBall: A True Underdog story", "Top Dog", "Hellbound", "The Cutter", "Hero and the Terror"];
 
 
 //create each section of the movie ->
@@ -49,6 +41,7 @@ var create = function(elem){
   //console.log(list);
   //xhr.send();
 //}
+
 comedies.forEach(create);
 romance.forEach(create);
 action.forEach(create);
