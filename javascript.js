@@ -25,7 +25,6 @@ var create = function(elem){
     var p = document.createElement("p");
     var div = document.createElement("div");
     div.className="button";
-    //console.log(i+" li created");
 
     //each list item contains a image and title of movie
     list.appendChild(li);
@@ -33,6 +32,29 @@ var create = function(elem){
     button.appendChild(div);
     div.appendChild(image);
     div.appendChild(p)
+
+    //hidden elements to be displayed
+    var hiddenDiv = document.createElement("div");
+    hiddenDiv.className ="hidden";
+    var title = document.createElement("h2");
+    title.className="title";
+    var year = document.createElement("h3");
+    year.className="year";
+    var plot = document.createElement("p");
+    plot.className="plot";
+    var director = document.createElement("p");
+    director.className="director";
+    var actor = document.createElement("p");
+    actor.className="actor";
+
+    //append list items with hidden elements
+    li.appendChild(hiddenDiv);
+    hiddenDiv.appendChild(title);
+    hiddenDiv.appendChild(year);
+    hiddenDiv.appendChild(plot);
+    hiddenDiv.appendChild(director);
+    hiddenDiv.appendChild(actor);
+
 
     //this is for the 1. input // 2. URI encodes with % // 3. API with link
     var input = elem;
@@ -47,13 +69,19 @@ var create = function(elem){
     xhr.open("GET", url);
     xhr.addEventListener('load', function(e){
       var d = xhr.responseText; // ***(d is)DATA, COMES IN JSON STRINGIFIED***
-      //console.log("stringified");
       var parsed = JSON.parse(d); // ***MUST PARSE THE DATA FIRST***
       image.src = parsed.Poster; //parsed is now the object (.Poster is key in object)
       //console.log("image source added");
-      //console.log(parsed);
 
       p.innerHTML = parsed.Title;
+
+      //hidden elements
+      title.innerHTML = "Movie: " + parsed.Title;
+      year.innerHTML = "Year: " + parsed.Year;
+      plot.innerHTML = "Plot: " + parsed.Plot;
+      director.innerHTML = "Directed by: " + parsed.Director;
+      actor.innerHTML = "Starring: " +parsed.Actors;
+
       //div.innerHTML = parsed.Plot;
       //anchor.setAttribute("href", " "); //this makes posters clickable temporary
     })
@@ -64,51 +92,3 @@ comedies.forEach(create);
 romance.forEach(create);
 action.forEach(create);
 chuckNorris.forEach(create);
-
-//function for hidden div to display info
-  var movieInfo = function(elem){
-    var div = document.querySelector("div");
-    var section = document.createElement("div");
-    section.className ="section";
-    var poster = document.createElement("img");
-    poster.className="poster";
-    var title = document.createElement("h1");
-    title.className="title";
-    var year =  document.createElement("h2");
-    year.className="year";
-    var plot = document.createElement("p");
-    plot.className="plot";
-    var director = document.createElement("p");
-    director.className="director";
-    var actors = document.createElement("p");
-    actors.className="actor";
-    div.appendChild(section);
-    section.appendChild(title);
-    section.appendChild(poster);
-    section.appendChild(year);
-    section.appendChild(plot);
-    section.appendChild(director);
-    section.appendChild(actors);
-
-  var input = elem;
-  var url_safe = encodeURI(input);
-  var url = "http://omdbapi.com/?t=" + url_safe;
-
-  //constructor
-  var xhr = new XMLHttpRequest();
-
-  //gets the data from url
-  xhr.open("GET", url);
-  xhr.addEventListener('load', function(e){
-    var d = xhr.responseText; // ***(d is)DATA, COMES IN JSON STRINGIFIED***
-    var parsed = JSON.parse(d); // ***MUST PARSE THE DATA FIRST***
-    poster.src = parsed.Poster; //parsed is now the object (.Poster is key in object)
-    console.log(parsed);
-    title.innerHTML = "Movie: " + parsed.Title;
-    year.innerHTML = "Year: " + parsed.Year;
-    plot.innerHTML = "Plot: " + parsed.Plot;
-    director.innerHTML = "Directed by: " + parsed.Director;
-    actors.innerHTML = "Starring: " +parsed.Actors;
-  })
-  xhr.send(); // **I have no idea what this does**
-}
