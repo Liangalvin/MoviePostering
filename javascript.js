@@ -5,13 +5,15 @@ $(document).ready(function(){
       $(this).slideUp("slow");
       $(this).siblings().css("visibility", "visible");
     }
-    else if($(this).css("display")==="block"){
+  });
+  $(".hidden").click(function(){
+    if($(this).css("display")==="block"){
       $(this).slideUp("slow");
       $(this).css("visibility", "hidden");
       $(this).siblings().slideDown("slow");
       $(this).siblings().css("visibility", "visible");
     }
-  });
+  })
 })
 
 //array of movies -> have movies listed with class of "unselected"
