@@ -1,25 +1,18 @@
 $(document).ready(function(){
   $(".button").click(function(){
-    $(this).slideUp("slow")//, function(){
-      $(".hidden").slideDown("slow", function(){
-        $(this).css("visibility", "visible");
-      })
-      //$(this).toggleClass("selected");
-      //$(".hidden").slideDown("slow", function(){
-        //$(".hidden").siblings().css("visibility", "visible");
-        //$(this).css("visibility", "visible");
-        //$(this).next().css("visibility", "visible");
-        //$(this).next().toggleClass("visible");
-        //$(this).toggleClass("visible");
-        // $(".visible").toggleClass("hidden", function(){
-        //   if($(".button").display==="none"){
-        //     $(".button").slideDown("slow");
-        //   }
-        // })
-      //});
-    //});
+    if($(this).css("display")==="block"){
+      $(this).siblings().slideDown("slow");
+      $(this).slideUp("slow");
+      $(this).siblings().css("visibility", "visible");
+    }
+    else if($(this).css("display")==="block"){
+      $(this).slideUp("slow");
+      $(this).css("visibility", "hidden");
+      $(this).siblings().slideDown("slow");
+      $(this).siblings().css("visibility", "visible");
+    }
   });
-});
+})
 
 //array of movies -> have movies listed with class of "unselected"
 var comedies = ["Step Brothers", "The Other Guys", "Zoolander", "Megamind", "Semi-pro", "Blades of Glory", "21 Jump street", "22 Jump Street", "American Pie", "American Wedding", "American Reunion", "The Hangover", "Just Go With It", "50 First Dates"];
