@@ -61,3 +61,17 @@ p {
   margin: auto;
   text-align: center;
 }
+
+footer {
+  text-align: left;
+  margin: auto;
+  width: 800px;
+  height: 40px;
+  float: left;
+  /*border-style: solid;
+  border-color: black;*/
+}
+
+span {
+  margin-left: 45px;
+}

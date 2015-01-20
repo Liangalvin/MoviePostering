@@ -20,7 +20,7 @@ $(document).ready(function(){
 var comedies = ["Step Brothers", "The Other Guys", "Zoolander", "Megamind", "Semi-pro", "Blades of Glory", "21 Jump street", "22 Jump Street", "American Pie", "American Wedding", "American Reunion", "The Hangover", "Just Go With It", "50 First Dates"];
 var romance = ["Thor", "Iron Man", "Iron Man 2", "The Incredible Hulk", "Spider-Man", "Spider-Man 2", "Spider-Man 3", "Transformers", "Transformers: Age of Extinction", "Transformers: Dark of the Moon", "Transformers: Revenge of the Fallen", "Batman Begins", "The Dark Knight", "The Dark Knight Rises", "Man of Steel", "Captain America: The first avenger"];
 var action = ["The Expendables", "The Expendables 2", "The Expendables 3", "The Help", "Rambo", "Gangster Squad", "The Terminator", "Terminator 3: Rise of the Machines", "Terminator Salvation", "Taken", "Taken 2", "The A-team", "ZombieLand"];
-var chuckNorris = ["The Delta Force", "Sidekicks", "Missing In Action", "The Hitman", "Firewalker", "DodgeBall: A True Underdog story", "Top Dog", "Hellbound", "The Cutter", "Hero and the Terror"];
+var chuckNorris = ["The Delta Force", "Sidekicks", "Missing In Action", "The Hitman", "Firewalker", "DodgeBall: A True Underdog story", "Top Dog", "Hellbound", "The Cutter", "Hero and the Terror", "The emperor's new groove"];
 
 
 //create each section of the movie ->
@@ -62,7 +62,7 @@ var createTags = function(elem){
     var actor = document.createElement("p");
     actor.className="actor";
 
-    //append list items with hidden elements
+    //append list items with hidden element (hiddenDiv)
     button.appendChild(hiddenDiv);
     hiddenDiv.appendChild(title);
     hiddenDiv.appendChild(year);
@@ -97,7 +97,6 @@ var createTags = function(elem){
       director.innerHTML = "Directed by: " + parsed.Director;
       actor.innerHTML = "Starring: " +parsed.Actors;
 
-      //div.innerHTML = parsed.Plot;
       //anchor.setAttribute("href", " "); //this makes posters clickable temporary
     })
    xhr.send(); // **I have no idea what this does**
